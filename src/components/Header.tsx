@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleGetStartedClick = () => {
+    navigate('/login'); // Navigate to the login page
+  };
+
   return (
     <header className="border-b py-4 px-4 sm:px-10 bg-white tracking-wide relative z-50">
-    
       <div className="max-w-7xl w-full mx-auto flex flex-wrap items-center gap-4">
         <Link to="/">
           <img src="" alt="logo" className="w-40" />
@@ -52,9 +56,8 @@ const Header: React.FC = () => {
                 Home
               </Link>
             </li>
-           
             <li className="max-lg:border-b max-lg:py-3 px-3">
-              <Link to="/courses" className="hover:text-blue-600 block font-bold transition-all">
+              <Link to="/course" className="hover:text-blue-600 block font-bold transition-all">
                 Courses
               </Link>
             </li>
@@ -63,7 +66,6 @@ const Header: React.FC = () => {
                 About
               </Link>
             </li>
-
             <li className="max-lg:border-b max-lg:py-3 px-3">
               <Link to="/contact" className="hover:text-blue-600 block font-bold transition-all">
                 Contact Us
@@ -73,7 +75,10 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex ml-auto">
-          <button className="bg-blue-100 hover:bg-blue-200 flex items-center transition-all font-semibold rounded-md px-5 py-3">
+          <button
+            onClick={handleGetStartedClick} // Call the function on button click
+            className="bg-blue-100 hover:bg-blue-200 flex items-center transition-all font-semibold rounded-md px-5 py-3"
+          >
             Get started
             <svg xmlns="http://www.w3.org/2000/svg" className="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
               <path
