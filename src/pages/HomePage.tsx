@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
       <Header />
        <Banner />
 
-      <div className="pt-32">
+      <div className="pt-20">
         <Counter />
       </div>
 

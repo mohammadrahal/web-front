@@ -2,12 +2,12 @@ import React from 'react';
 
 const Banner: React.FC = () => {
   return (
-    <section className="relative bg-blue-800 h-[600px] sm:h-[700px] lg:h-[800px]">
+    <section className="relative bg-blue-800">
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-blue-900 opacity-80"></div>
       
       {/* Centered Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 h-full flex items-center justify-center text-center px-4 p-20">
         <div className="text-white max-w-2xl">
           <h1 className="text-2xl font-bold sm:text-3xl lg:text-5xl">
             WELCOME TO <span className="text-yellow-400">AMAL ACADEMY!</span>
